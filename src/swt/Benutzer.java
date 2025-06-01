@@ -4,6 +4,11 @@ public abstract class Benutzer {
     protected String username;
     protected String passwort;
 
+    public Benutzer(String username, String passwort) { //Später müssen wir die Sicherheitsaspkete betrachten
+        this.username = username;
+        this.passwort = passwort;
+    }
+
     public boolean anmelden(String eingabePasswort) {
         return this.passwort.equals(eingabePasswort);
     }

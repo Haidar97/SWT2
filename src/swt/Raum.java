@@ -8,4 +8,13 @@ public class Raum {
         this.raumNr = raumNr;
         this.gebäude = gebäude;
     }
+
+    // Getters for raumNr and gebäude based on diagram
+    public String getRaumNr() {
+        return raumNr;
+    }
+
+    public String getGebäude() {
+        return gebäude;
+    }
 }
