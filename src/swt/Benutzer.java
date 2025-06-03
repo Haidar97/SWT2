@@ -9,9 +9,7 @@ public abstract class Benutzer {
         this.passwort = passwort;
     }
 
-    public boolean anmelden(String eingabePasswort) {
-        return this.passwort.equals(eingabePasswort);
-    }
+ 
 
     public void abmelden() {
         System.out.println(username + " wurde abgemeldet.");

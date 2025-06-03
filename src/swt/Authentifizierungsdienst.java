@@ -12,9 +12,9 @@ public class Authentifizierungsdienst {
     public Authentifizierungsdienst() {
         // Initialize with some default users for testing
         userCredentials = new HashMap<>();
-        userCredentials.put("lehrkraft1", "passLehrkraft");
-        userCredentials.put("teilnehmer1", "passTeilnehmer");
-        userCredentials.put("admin1", "passAdmin");
+    }
+    public Map<String, String> getuserCredentials(){
+        return userCredentials;
     }
 
     public boolean anmelden(String benutzername, String eingabePasswort) {

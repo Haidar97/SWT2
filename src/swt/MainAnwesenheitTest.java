@@ -15,6 +15,7 @@ public class MainAnwesenheitTest {
 
         // 2. Erstelle Testdaten
         Lehrkraft lehrkraft = new Lehrkraft("lehrkraft1", "passLehrkraft", Arrays.asList("Software Engineering")); //
+        authDienst.getuserCredentials().put(lehrkraft.getUsername(), lehrkraft.passwort);
         Teilnehmer teilnehmer1 = new Teilnehmer("teilnehmer1", "passTeilnehmer", "Max", "Mustermann", "max.m@example.com"); //
         Teilnehmer teilnehmer2 = new Teilnehmer("teilnehmer2", "passTeilnehmer2", "Anna", "Schmidt", "anna.s@example.com"); //
 
@@ -67,7 +68,7 @@ public class MainAnwesenheitTest {
                 // Bestätigung der erfolgreichen Erfassung (implizit durch Konsolenausgaben)
                 System.out.println("\nLehrkraft: Anwesenheitserfassung abgeschlossen."); //
 
-                // Optional: Anwesenheitsliste der Veranstaltung ausgeben
+                //Anwesenheitsliste der Veranstaltung ausgeben
                 System.out.println("\n--- Anwesenheitsliste der Veranstaltung vom " + ausgewaehlteVeranstaltung.getDatum() + " ---"); //
                 for (Anwesenheit anw : ausgewaehlteVeranstaltung.holeAnwesenheitsliste()) { //
                     System.out.println("  - Teilnehmer: " + anw.getTeilnehmer().getUsername() + //
@@ -75,7 +76,7 @@ public class MainAnwesenheitTest {
                                        ", Kommentar: " + anw.getKommentar()); //
                 }
 
-                // Optional: Anwesenheitsverlauf eines Teilnehmers ausgeben
+                //Anwesenheitsverlauf eines Teilnehmers ausgeben
                 System.out.println("\n--- Anwesenheitsverlauf von " + teilnehmer1.getUsername() + " ---");
                 for (Anwesenheit anw : teilnehmer1.holeAnwesenheitsverlauf()) { //
                     System.out.println("  - Status: " + anw.holeStatus() + //
